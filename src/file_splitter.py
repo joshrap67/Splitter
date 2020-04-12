@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 WAVELENGTH_TUPLE_INDEX = 0
 FLUX_TUPLE_INDEX = 1
@@ -71,13 +72,13 @@ def get_directory(min_wavelength, max_wavelength, indefinite_mode, range_spectru
     minimum = int(min_wavelength)
     maximum = int(max_wavelength)
     #  make an output folder if it doesn't already exist
-    output_path = os.getcwd() + "\\output\\"
-    os.makedirs(output_path, exist_ok=True)
+    output_path = Path(os.getcwd() + "/output/")
+    output_path.mkdir(parents=True, exist_ok=True)
     directory_name = output_path
     if not indefinite_mode:
         #  make a specific folder for the splitting if it is in definite mode
-        directory_name = output_path + "\\%s_%s_%s_%s\\" % (minimum, maximum, range_spectrum, overlap)
-        os.makedirs(directory_name, exist_ok=True)
+        directory_name = Path(str(output_path) + "/%s_%s_%s_%s/" % (minimum, maximum, range_spectrum, overlap))
+        directory_name.mkdir(parents=True, exist_ok=True)
     return directory_name
 
 
@@ -96,8 +97,8 @@ def make_file(directory, segment, min_wavelength, max_wavelength):
     minimum = int(min_wavelength)
     maximum = int(max_wavelength)
     try:
-        file_name = os.path.join(directory, "%s_%s.txt" % (minimum, maximum))
-        output = open(file_name, "w")
+        file_name = directory / ("%s_%s.txt" % (minimum, maximum))
+        output = open(file_name, "a+")
         for i in range(0, len(segment), 1):
             if i is None:
                 break

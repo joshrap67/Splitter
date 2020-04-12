@@ -29,6 +29,8 @@ def definite_mode(quasar_spectrum):
         elif max_wavelength < min_wavelength:
             return "Maximum must be greater than the minimum wavelength!"
         range_of_spectrum = float(input("Enter the range of the spectrum: "))
+        if range_of_spectrum <= 0:
+            return "Range must be a positive non-zero number."
         overlap = float(input("Enter the overlap of the files: "))
         if overlap > max_wavelength:
             return "Overlap cannot be greater than the maximum wavelength!"
@@ -41,7 +43,6 @@ def definite_mode(quasar_spectrum):
         else:
             # round up if the number of files is a float instead of whole number
             files = int(files_float) + 1
-
         directory = get_directory(min_wavelength, max_wavelength, False,
                                   range_spectrum=int(range_of_spectrum), overlap=int(overlap))
         # create all the files
@@ -58,6 +59,6 @@ def definite_mode(quasar_spectrum):
             min_wavelength = max_wavelength - overlap
         return "Successfully created %s files!" % files
     except ValueError:
-        return "Input error. Not a valid number"
+        return "Input error. Not a valid number!"
     except TypeError:
-        return "Input error. Not a valid number"
+        return "Input error. Not a valid number!"

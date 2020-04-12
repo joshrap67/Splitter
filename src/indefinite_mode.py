@@ -38,8 +38,8 @@ def indefinite_mode(quasar_spectrum):
             make_file(directory, working_segment, min_wavelength, max_wavelength)
             print("File successfully created!")
     except ValueError:
-        return "Input error. Not a valid number"
+        return "Input error. Not a valid number!"
     except TypeError:
-        return "Input error. Not a valid number"
+        return "Input error. Not a valid number!"
 
     return None
