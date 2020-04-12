@@ -98,7 +98,7 @@ def make_file(directory, segment, min_wavelength, max_wavelength):
     maximum = int(max_wavelength)
     try:
         file_name = directory / ("%s_%s.txt" % (minimum, maximum))
-        output = open(file_name, "a+")
+        output = open(file_name, "w+")
         for i in range(0, len(segment), 1):
             if i is None:
                 break
