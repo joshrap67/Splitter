@@ -53,7 +53,7 @@ def main():
 
 def program_loop(quasar_spectrum):
     """
-    Provides a loop for the user to constantly pick different actions to execute.
+    Provides a loop for the user to indefinitely pick different actions to execute.
 
     :param quasar_spectrum: a list of tuples. Covers every point in original file (wavelength,flux)
     :return: None
