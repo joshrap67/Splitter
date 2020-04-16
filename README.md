@@ -41,7 +41,7 @@ The files are placed into a folder inside the output directory with the followin
 
 minimumWavelength_maximumWavelength_range_overlap
 
-The files within this folder have the following schema:
+Do note that if you run the program again with the exact same parameters, it will overwrite the old folder. The files within this folder have the following schema:
 
 minimumWavelengthOfFile_maximumWavelengthOfFile
 
@@ -49,7 +49,7 @@ minimumWavelengthOfFile_maximumWavelengthOfFile
 
 When choosing this option, the user must supply a minimum wavelength and a maximum wavelength. Single files can be made over and over until the user types in a specific key word to exit this mode. Files are placed directly into the output directory.
 
-The files within this folder have the following schema:
+The files have the following schema:
 
 minimumWavelengthOfFile_maximumWavelengthOfFile
 
